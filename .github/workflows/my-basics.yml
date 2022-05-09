@@ -5,7 +5,7 @@
 name: My github basics
 env:
   APPLICATION_NAME : "MyAPP"
-  PACKAGE_NAME     : "deploy_file_ver-${( github.sha )}"
+  PACKAGE_NAME     : "deploy_file_ver-${{ github.sha }}"
   
 
 # Controls when the workflow will run
@@ -29,7 +29,7 @@ jobs:
       run: 
          echo "Message 1"
          echo "Message 2"
-         echo "Application name: ${{ env.APPLICATION_NAME }}"
+         echo "Application name ${{ env.APPLICATION_NAME }}"
          
   
   my-deploy:
@@ -42,4 +42,4 @@ jobs:
     - name: Print Hello message on Deploy
       run: echo "Hello World from deploy"
     - name: Printing deploy package name
-      run:  echo "Deployment name : ${{ env.package_name }}"
+      run:  echo "Deployment name ${{ env.package_name }}"
