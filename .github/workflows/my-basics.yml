@@ -4,8 +4,8 @@
 
 name: My github basics
 env:
-  APPLICATION_NAME: "MyAPP"
-  package_name    : "deploy_file_ver-${( github.sha )}
+  APPLICATION_NAME : "MyAPP"
+  package_name     : "deploy_file_ver-${( github.sha )}
   
 
 # Controls when the workflow will run
@@ -42,4 +42,4 @@ jobs:
     - name: Print Hello message on Deploy
       run: echo "Hello World from deploy"
     - name: Printing deploy package name
-      run:  echo 
+      run:  echo "Deployment name : ${( env.package_name )}"
