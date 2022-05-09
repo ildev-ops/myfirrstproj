@@ -53,8 +53,8 @@ jobs:
     
     - name: Print env var
       run: 
-         echo "Var1 = {{ env.VAR1 }}"
-         echo "Var2 = {{ env.VAR2 }}"
+         echo "Var1 = ${{ env.VAR1 }}"
+         echo "Var2 = ${{ env.VAR2 }}"
          echo "Var3 = $Local_VAR"
       
       env:
