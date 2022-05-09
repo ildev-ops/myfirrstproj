@@ -1,0 +1,35 @@
+#
+#
+#
+# Client config example
+
+[Interface]
+# Client private key
+PrivateKey =   .......
+# Client ip
+Address = 10.101.101.10/32
+DNS = 8.8.8.8,8.8.4.4
+
+[Peer]
+# Server public key
+PublicKey = .....
+Endpoint = 194.44.221.169:51717
+AllowedIPs = 10.101.101.1/24,192.168.2.0/0
+
+#  Keygen
+umask 077 ; wg genkey | tee user_private_key | wg pubkey > user_public_key
+
+###   Test
+
+# Non admin windows
+# Insert item to registry
+
+New-Item -Path “HKLM:\Software” -Name WireGuard –Force
+New-Item -Path “HKLM:\Software\WireGuard” -Name LimitedOperatorUI –Force
+New-ItemProperty "HKLM:\software\wireguard" -Name "LimitedOperatorUI" -Value 1 -PropertyType "DWord" -Force
+
+# Add non-admin user to Local group 
+Add-LocalGroupMember -Group "Network Configuration Operators" -Member "$username"
+
+"Network Configuration Operators"  “Оператори налаштування мережі” “Операторі настройки сети”
+ 
