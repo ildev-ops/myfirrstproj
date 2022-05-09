@@ -42,4 +42,4 @@ jobs:
     - name: Print Hello message on Deploy
       run: echo "Hello World from deploy"
     - name: Printing deploy package name
-      run:  echo "Deployment name ${{ env.package_name }}"
+      run:  echo "Deployment name ${{ env.PACKAGE_NAME }}"
