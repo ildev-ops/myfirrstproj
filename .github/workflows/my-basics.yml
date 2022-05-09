@@ -3,6 +3,10 @@
 # -----------------------------
 
 name: My github basics
+env:
+  APPLICATION_NAME: "MyAPP"
+  package_name    : "deploy_file_ver-${( github.sha )}
+  
 
 # Controls when the workflow will run
 on:
@@ -20,6 +24,13 @@ jobs:
     steps:
     - name: Print Hello message on testing
       run: echo "Hello World from testing"
+    
+    - name: Execute few command
+      run: 
+         echo "Message 1"
+         echo "Message 2"
+         echo "Application name: ${( env.APPLICATION_NAME )}"
+         
   
   my-deploy:
     
@@ -30,3 +41,5 @@ jobs:
       
     - name: Print Hello message on Deploy
       run: echo "Hello World from deploy"
+    - name: Printing deploy package name
+      run:  echo 
